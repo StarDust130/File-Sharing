@@ -14,3 +14,14 @@ An awesome file-sharing app using Next.js, Tailwind CSS, React, and Firebase! �
 - **React** ⚛️
 - **Firebase** 🔥
 
+## Usage 📁
+- Upload Files:
+
+- Drag-and-drop or click to upload. 🚀📂
+- Generate Link:
+
+- Get a link or send an email invite. 📧🔗✉️
+- Access Shared Files:
+
+- Recipients can download files using the link. 📥💾
+
