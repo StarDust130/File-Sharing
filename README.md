@@ -1,4 +1,4 @@
-# FileShare App 🚀
+# File Sharing App 🚀
 
 An awesome file-sharing app using Next.js, Tailwind CSS, React, and Firebase! 🌐💾
 
