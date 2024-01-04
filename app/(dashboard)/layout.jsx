@@ -4,7 +4,7 @@ import TopHeader from "./_components/TopHeader";
 const layout = ({ children }) => {
   return (
     <>
-      <div className=" hidden md:block h-full md:w-64 flex-col fixed inset-y-0 z-50 ">
+      <div className="hidden md:block h-full md:w-60 flex-col fixed inset-y-0 z-50">
         <SideNav />
       </div>
 

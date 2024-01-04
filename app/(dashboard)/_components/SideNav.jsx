@@ -37,20 +37,19 @@ const SideNav = () => {
 
       <div className="flex flex-col float-left ">
         {menuList.map((item) => (
-          <button
+          <Link
             key={item.id}
+            href={item.path}
             className={clsx(
-              "flex gap-2 p-4 px-6 hover:bg-gray-100 w-full text-gray-500  ",
+              "flex gap-2 p-4 px-6  text-gray-500 hover:bg-gray-100 w-60",
               {
                 "bg-blue-50 text-primary": pathname === item.path,
               }
             )}
           >
-            <Link href={item.path}>
-              <item.icon className="w-5 h-5 " />
-              <h2>{item.name}</h2>
-            </Link>
-          </button>
+            <item.icon className="w-5 h-5 " />
+            <h2>{item.name}</h2>
+          </Link>
         ))}
       </div>
     </div>
