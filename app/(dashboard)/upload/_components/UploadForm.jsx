@@ -74,7 +74,7 @@ const UploadForm = () => {
         >
           <span className="flex items-center justify-center">Upload</span>
           {!file && (
-            <span className="absolute opacity-0 bg-gray-800 text-white py-1 px-2 rounded-md text-xs transition-opacity duration-300 ease-in-out transform translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 lg:top-16 lg:right-[40px]">
+            <span className="absolute opacity-0 bg-gray-800 text-white py-1 px-2 rounded-md text-xs transition-opacity duration-300 ease-in-out transform translate-y-2 lg:group-hover:opacity-100 group-hover:translate-y-0 lg:top-16 lg:right-[120px]">
               Upload File
             </span>
           )}
