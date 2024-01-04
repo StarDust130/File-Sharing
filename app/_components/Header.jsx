@@ -62,7 +62,7 @@ const Header = () => {
                 </Link>
 
                 <Link
-                  className="block rounded-md  px-5 py-2.5 text-sm font-medium text-black transition border-2 border-black hover:bg-gray-100 "
+                  className="hidden md:block rounded-md  px-5 py-2.5 text-sm font-medium text-black transition border-2 border-black hover:bg-gray-100 "
                   href="/sign-up"
                 >
                   Get Started
