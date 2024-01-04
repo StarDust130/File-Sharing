@@ -2,8 +2,10 @@
 import { useState } from "react";
 import PopUpWindow from "./PopUpWindow";
 import FilePreview from "./FilePreview";
+import ProgressBar from "./ProgressBar";
+import CompletedPopUp from "./CompletedPopUp";
 
-const UploadForm = () => {
+const UploadForm = ({ uploadBtnClick, progress }) => {
   const [file, setFile] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -65,24 +67,37 @@ const UploadForm = () => {
         {/* File Preview 📁 */}
         {file && <FilePreview file={file} removeFile={() => setFile(null)} />}
 
-        {/* Button 🧋 */}
-        <button
-          disabled={!file}
-          className={`group relative p-3 bg-primary hover:bg-primary-dark text-white w-[30%] rounded-full mt-5 transition duration-300 ease-in-out transform hover:scale-105 ${
-            !file ? "cursor-not-allowed opacity-70 disabled:bg-gray-400" : ""
-          }`}
-        >
-          <span className="flex items-center justify-center">Upload</span>
-          {!file && (
-            <span className="absolute opacity-0 bg-gray-800 text-white py-1 px-2 rounded-md text-xs transition-opacity duration-300 ease-in-out transform translate-y-2 lg:group-hover:opacity-100 group-hover:translate-y-0 lg:top-16 lg:right-[120px]">
-              Upload File
-            </span>
-          )}
-        </button>
+        {progress >= 0 ? (
+          <ProgressBar progress={progress} />
+        ) : (
+          <button
+            disabled={!file}
+            className={`group relative p-3 bg-primary hover:bg-primary-dark text-white w-[30%] rounded-full mt-5 transition duration-300 ease-in-out transform hover:scale-105 ${
+              !file ? "cursor-not-allowed opacity-70 disabled:bg-gray-400" : ""
+            }`}
+            onClick={() => uploadBtnClick(file)}
+          >
+            <span className="flex items-center justify-center">Upload</span>
+            {!file && (
+              <span className="absolute opacity-0 bg-gray-800 text-white py-1 px-2 rounded-md text-xs transition-opacity duration-300 ease-in-out transform translate-y-2 lg:group-hover:opacity-100 group-hover:translate-y-0 lg:top-16 lg:right-[120px]">
+                Upload File
+              </span>
+            )}
+          </button>
+        )}
+
+
+
+        {/* Popup to Show Task Completed 🍿 */}
+        {progress === 100 && <CompletedPopUp onClose={closePopup} />}
+       
+       
+
+        {/* Popup Window 🍿 */}
+        {showPopup && <PopUpWindow onClose={closePopup} />}
       </div>
-      {/* Popup Window 🍿 */}
-      {showPopup && <PopUpWindow onClose={closePopup} />}
     </>
   );
 };
+
 export default UploadForm;
