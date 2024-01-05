@@ -31,8 +31,10 @@ const SideNav = () => {
   ];
   return (
     <div className="shadow-sm border-r h-full ">
-      <div className="p-5 border-b ">
-        <Image src="/logo.svg" alt="logo" width={150} height={100} />
+      <div className="p-5  ">
+        <Link href="/upload">
+          <Image src="/logo.svg" alt="logo" width={100} height={150} />
+        </Link>
       </div>
 
       <div className="flex flex-col float-left ">
