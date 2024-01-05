@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.1",
     "@react-pdf-viewer/core": "^3.12.0",
+    "axios": "^1.6.4",
     "clsx": "^2.1.0",
     "firebase": "^10.7.1",
     "lucide-react": "^0.303.0",
@@ -19,7 +20,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-modal": "^3.16.1",
-    "react-pdf": "^7.6.0"
+    "react-pdf": "^7.6.0",
+    "resend": "^2.1.0"
   },
   "devDependencies": {
     "@types/react": "18.2.46",

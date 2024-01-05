@@ -50,7 +50,7 @@ const Page = () => {
       userEmail: user?.primaryEmailAddress.emailAddress,
       userName: user?.fullName,
       password: "",
-      shortUrl: process.env.NEXT_PUBLIC_BASE_URL + DocId,
+      shortUrl: process.env.NEXT_PUBLIC_BASE_URL+"f/" + DocId,
       Id: DocId,
     });
     setFileDocId(DocId);
@@ -63,7 +63,7 @@ const Page = () => {
       const timeoutId = setTimeout(() => {
         router.push("/file-preview/" + fileDocId);
         console.log(fileDocId + " " + progress);
-      }, 3000); // Delay for 3 seconds (3000 milliseconds)
+      }, 1000); // Delay for 1 seconds (1000 milliseconds)
 
       // Cleanup the timeout in case the component unmounts before the timeout
       return () => clearTimeout(timeoutId);

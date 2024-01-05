@@ -7,7 +7,7 @@ const CompletedPopUp = ({ onClose }) => {
     const timer = setTimeout(() => {
       setVisible(false);
       onClose(); // Call the onClose function after 3 seconds
-    }, 6000);
+    }, 3000);
 
     return () => clearTimeout(timer); // Cleanup the timer on component unmount
   }, [onClose]);

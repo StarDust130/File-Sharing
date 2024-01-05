@@ -1,17 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import {
-  doc,
-  getDoc,
-  getFirestore,
-  setDoc,
-  updateDoc,
-} from "firebase/firestore";
+import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { app } from "../../../../firebase/firebaseConfig";
 import Image from "next/image";
-import { ArrowLeftCircle, Copy } from "lucide-react";
+import { ArrowLeftCircle, Copy, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import Loading from "../../../_components/Loading";
+import globalApi from "../../../_utils/globalApi";
+import image from "../../../../public/files.png";
 
 const FilePreview = ({ params }) => {
   //! Initialize Cloud Firestore and get a reference to the service
@@ -19,6 +16,7 @@ const FilePreview = ({ params }) => {
   const [fileData, setFileData] = useState(null);
   const [enablePassword, setEnablePassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleCheckboxChange = () => {
     setEnablePassword(!enablePassword);
@@ -53,7 +51,7 @@ const FilePreview = ({ params }) => {
 
   // Render loading or error state while data is being fetched
   if (!fileData) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   //! Save password
@@ -76,6 +74,20 @@ const FilePreview = ({ params }) => {
     }
   };
 
+  const sendEmail = async () => {
+    const data = {
+      emailTosend: email,
+      userName: user?.fullName,
+      fileName: file?.fileName,
+      fileSize: file?.fileSize,
+      fileType: file?.fileType,
+      fileUrl: file?.ShortUrl,
+    };
+    globalApi.SendEmail(data).then((res) => {
+      console.log(res);
+    });
+  };
+
   return (
     <>
       <div className="flex relative flex-col lg:flex-row items-center min-h-screen w-full  text-xs md:text-base">
@@ -89,15 +101,27 @@ const FilePreview = ({ params }) => {
         {/* Left Side */}
         <div className="lg:w-[50%] flex-shrink-0 p-8">
           <div className="h-full mb-4 overflow-hidden rounded-lg flex items-center justify-center  w-full">
-            <Image
-              src={fileData?.fileUrl}
-              layout="responsive"
-              width={64}
-              height={64}
-              objectFit="cover"
-              alt="file preview"
-              className="rounded-md"
-            />
+            {fileData?.fileUrl ? (
+              <Image
+                src={fileData.fileUrl}
+                layout="responsive"
+                width={64}
+                height={64}
+                objectFit="cover"
+                alt="file preview"
+                className="rounded-md"
+              />
+            ) : (
+              <Image
+                src={image}
+                layout="responsive"
+                width={64}
+                height={64}
+                objectFit="cover"
+                alt="no file preview"
+                className="rounded-md"
+              />
+            )}
           </div>
 
           <div className="text-center">
@@ -121,7 +145,7 @@ const FilePreview = ({ params }) => {
             />
             <button
               onClick={handleCopyClick}
-              className="absolute right-2 top-10    text-gray-500 hover:text-gray-700 cursor-pointer"
+              className="absolute right-2  md:top-10  top-9   text-gray-500 hover:text-gray-700 cursor-pointer"
             >
               <Copy size={20} />
             </button>
@@ -143,7 +167,7 @@ const FilePreview = ({ params }) => {
             {enablePassword && (
               <div className="flex flex-col space-y-4 relative">
                 <input
-                  type="text"
+                  type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter Password"
@@ -155,18 +179,27 @@ const FilePreview = ({ params }) => {
                 >
                   Save
                 </button>
+                <span
+                  className="absolute right-1 md:-top-1 -top-3 cursor-pointer "
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <EyeOff /> : <Eye />}
+                </span>
               </div>
             )}
 
-            <label className="text-lg font-semibold ">Send File to Email</label>
+            {/* <label className="text-lg font-semibold ">Send File to Email</label>
             <input
               type="email"
               placeholder="example@gmail.com"
               className="border-gray-500 border p-2 rounded  placeholder:text-gray-500focus:outline-none focus:ring focus:border-primary "
             />
-            <button className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition hover:bg-blue-700 ">
+            <button
+              className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition hover:bg-blue-700 "
+              onClick={() => sendEmail()}
+            >
               Send Email
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
