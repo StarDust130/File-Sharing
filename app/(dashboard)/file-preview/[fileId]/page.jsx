@@ -10,6 +10,7 @@ import Loading from "../../../_components/Loading";
 // import globalApi from "../../../_utils/globalApi";
 import image from "../../../../public/files.png";
 import PopUp from "../_components/PopUp";
+import ShareButton from "../../../_components/ShareButton";
 
 const FilePreview = ({ params }) => {
   //! Initialize Cloud Firestore and get a reference to the service
@@ -18,7 +19,7 @@ const FilePreview = ({ params }) => {
   const [enablePassword, setEnablePassword] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-    const [isPasswordSaved, setIsPasswordSaved] = useState(false);
+  const [isPasswordSaved, setIsPasswordSaved] = useState(false);
 
   const handleCheckboxChange = () => {
     setEnablePassword(!enablePassword);
@@ -57,46 +58,32 @@ const FilePreview = ({ params }) => {
   }
 
   //! Save password
- const onPasswordSave = async (password) => {
-   console.log("Saving password:", password);
+  const onPasswordSave = async (password) => {
+    console.log("Saving password:", password);
 
-   try {
-     const docRef = doc(db, "uploadedFile", params?.fileId);
-     await updateDoc(
-       docRef,
-       {
-         password: password,
-       },
-       { merge: true }
-     );
+    try {
+      const docRef = doc(db, "uploadedFile", params?.fileId);
+      await updateDoc(
+        docRef,
+        {
+          password: password,
+        },
+        { merge: true }
+      );
 
-     setIsPasswordSaved(true); // Set the state to show the popup
+      setIsPasswordSaved(true); // Set the state to show the popup
 
-     console.log("Password saved successfully!");
-   } catch (error) {
-     console.error("Error saving password:", error.message);
-   }
- };
+      console.log("Password saved successfully!");
+    } catch (error) {
+      console.error("Error saving password:", error.message);
+    }
+  };
 
- const closePopup = () => {
-   setIsPasswordSaved(false); // Set the state to hide the popup
- };
+  const closePopup = () => {
+    setIsPasswordSaved(false); // Set the state to hide the popup
+  };
 
-  // const sendEmail = async () => {
-  //   const data = {
-  //     emailTosend: email,
-  //     userName: user?.fullName,
-  //     fileName: file?.fileName,
-  //     fileSize: file?.fileSize,
-  //     fileType: file?.fileType,
-  //     fileUrl: file?.ShortUrl,
-  //   };
-  //   globalApi.SendEmail(data).then((res) => {
-  //     console.log(res);
-  //   });
-  // };
-
-  
+  const shareUrl = fileData?.shortUrl;
 
   return (
     <>
@@ -200,19 +187,9 @@ const FilePreview = ({ params }) => {
                 </span>
               </div>
             )}
-
-            {/* <label className="text-lg font-semibold ">Send File to Email</label>
-            <input
-              type="email"
-              placeholder="example@gmail.com"
-              className="border-gray-500 border p-2 rounded  placeholder:text-gray-500focus:outline-none focus:ring focus:border-primary "
-            />
-            <button
-              className="bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition hover:bg-blue-700 "
-              onClick={() => sendEmail()}
-            >
-              Send Email
-            </button> */}
+            <div>
+              <ShareButton shareUrl={shareUrl} />
+            </div>
           </div>
         </div>
       </div>
