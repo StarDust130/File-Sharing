@@ -19,8 +19,6 @@ My file-sharing website leverages the power of [Next.js](https://nextjs.org/) fo
 
 2. **Firebase for Data Storage**: We've chosen Firebase as our backend to provide a robust and secure storage solution for your files. Firebase allows for real-time updates, ensuring that your shared files are always up-to-date.
 
-
-
 ## Tech Stack 🛠️
 
 - **Next.js** 🚀
@@ -31,10 +29,21 @@ My file-sharing website leverages the power of [Next.js](https://nextjs.org/) fo
 ## Usage 📁
 - Upload Files:
 
-- Drag-and-drop or click to upload. 🚀📂
+  - Drag-and-drop or click to upload. 🚀📂
 - Generate Link:
 
-- Get a link or send an email invite. 📧🔗✉️
+  - Get a link or send an email invite. 📧🔗✉️
+  - Share on Social Media:
+
+    - Share your file link on all social media platforms! 🌐📤
+    - Add Password Protection:
+
+      - Optionally, add a password to secure your file link. 🔐🔗
 - Access Shared Files:
 
-- Recipients can download files using the link. 📥💾
+  - Recipients can download files using the link. 📥💾
+
+## File Info 📄
+
+- View information about all your files. 📑📂
+- Delete or manage your shared files. 🗑️📁
