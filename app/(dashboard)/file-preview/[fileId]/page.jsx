@@ -7,8 +7,9 @@ import Image from "next/image";
 import { ArrowLeftCircle, Copy, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import Loading from "../../../_components/Loading";
-import globalApi from "../../../_utils/globalApi";
+// import globalApi from "../../../_utils/globalApi";
 import image from "../../../../public/files.png";
+import PopUp from "../_components/PopUp";
 
 const FilePreview = ({ params }) => {
   //! Initialize Cloud Firestore and get a reference to the service
@@ -17,6 +18,7 @@ const FilePreview = ({ params }) => {
   const [enablePassword, setEnablePassword] = useState(false);
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordSaved, setIsPasswordSaved] = useState(false);
 
   const handleCheckboxChange = () => {
     setEnablePassword(!enablePassword);
@@ -55,38 +57,46 @@ const FilePreview = ({ params }) => {
   }
 
   //! Save password
-  const onPasswordSave = async (password) => {
-    console.log("Saving password:", password);
+ const onPasswordSave = async (password) => {
+   console.log("Saving password:", password);
 
-    try {
-      const docRef = doc(db, "uploadedFile", params?.fileId);
-      await updateDoc(
-        docRef,
-        {
-          password: password,
-        },
-        { merge: true }
-      );
+   try {
+     const docRef = doc(db, "uploadedFile", params?.fileId);
+     await updateDoc(
+       docRef,
+       {
+         password: password,
+       },
+       { merge: true }
+     );
 
-      console.log("Password saved successfully!");
-    } catch (error) {
-      console.error("Error saving password:", error.message);
-    }
-  };
+     setIsPasswordSaved(true); // Set the state to show the popup
 
-  const sendEmail = async () => {
-    const data = {
-      emailTosend: email,
-      userName: user?.fullName,
-      fileName: file?.fileName,
-      fileSize: file?.fileSize,
-      fileType: file?.fileType,
-      fileUrl: file?.ShortUrl,
-    };
-    globalApi.SendEmail(data).then((res) => {
-      console.log(res);
-    });
-  };
+     console.log("Password saved successfully!");
+   } catch (error) {
+     console.error("Error saving password:", error.message);
+   }
+ };
+
+ const closePopup = () => {
+   setIsPasswordSaved(false); // Set the state to hide the popup
+ };
+
+  // const sendEmail = async () => {
+  //   const data = {
+  //     emailTosend: email,
+  //     userName: user?.fullName,
+  //     fileName: file?.fileName,
+  //     fileSize: file?.fileSize,
+  //     fileType: file?.fileType,
+  //     fileUrl: file?.ShortUrl,
+  //   };
+  //   globalApi.SendEmail(data).then((res) => {
+  //     console.log(res);
+  //   });
+  // };
+
+  
 
   return (
     <>
@@ -154,6 +164,7 @@ const FilePreview = ({ params }) => {
                 Copied!
               </span>
             )}
+            <p>Share this URL with your Freind 😉</p>
 
             <div className="flex items-center space-x-2">
               <input
@@ -179,6 +190,8 @@ const FilePreview = ({ params }) => {
                 >
                   Save
                 </button>
+                {/* Display the PasswordSavedPopup component when isPasswordSaved is true */}
+                {isPasswordSaved && <PopUp onClose={closePopup} />}
                 <span
                   className="absolute right-1 md:-top-1 -top-3 cursor-pointer "
                   onClick={() => setShowPassword(!showPassword)}

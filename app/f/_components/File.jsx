@@ -68,14 +68,14 @@ const File = ({ fileData }) => {
         )}
         {fileData.password === password && (
           <button
-            className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring focus:border-primary transition duration-300"
+            className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring focus:border-primary transition duration-300 mb-2"
             onClick={handleDownload}
           >
             Download
           </button>
         )}
 
-        <p className="text-sm text-gray-500">*Terms and Conditions Apply</p>
+       
       </div>
     )
   );
