@@ -39,6 +39,8 @@ const page = () => {
                 What&apos;s included:
               </p>
 
+              
+
               <ul className="mt-2 space-y-2 sm:mt-4">
                 <li className="flex items-center gap-1">
                   <svg
