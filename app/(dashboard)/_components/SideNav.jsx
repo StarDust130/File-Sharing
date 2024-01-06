@@ -5,6 +5,7 @@ import { File, Shield, Upload, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const SideNav = ({ closeSideBar }) => {
   const pathname = usePathname();
 
@@ -29,9 +30,9 @@ const SideNav = ({ closeSideBar }) => {
     },
   ];
 
-  const handleLinkClick = () => {
-    closeSideBar();
-  };
+  // const handleLinkClick = () => {
+  //   ;
+  // };
 
   return (
     <div className="shadow-sm border-r h-full ">
@@ -55,7 +56,7 @@ const SideNav = ({ closeSideBar }) => {
                 "bg-blue-50 text-primary": pathname === item.path,
               }
             )}
-            onClick={handleLinkClick}
+            onClick={() => closeSideBar()}
           >
             <item.icon className="w-5 h-5 " />
             <h2>{item.name}</h2>

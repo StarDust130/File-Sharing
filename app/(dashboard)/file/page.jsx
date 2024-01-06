@@ -1,9 +1,8 @@
-
+import DataSetup from "./_components/DataSetup";
 const page = () => {
   return (
     <div>
-      page
-     
+      <DataSetup />
     </div>
   );
 };

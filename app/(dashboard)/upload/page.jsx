@@ -50,7 +50,7 @@ const Page = () => {
       userEmail: user?.primaryEmailAddress.emailAddress,
       userName: user?.fullName,
       password: "",
-      shortUrl: process.env.NEXT_PUBLIC_BASE_URL+"f/" + DocId,
+      shortUrl: process.env.NEXT_PUBLIC_BASE_URL + "f/" + DocId,
       Id: DocId,
     });
     setFileDocId(DocId);
@@ -60,10 +60,8 @@ const Page = () => {
   //! Redirect to file preview page after 3 seconds
   useEffect(() => {
     if (progress === 100 && fileDocId) {
-      const timeoutId = setTimeout(() => {
-        router.push("/file-preview/" + fileDocId);
-        console.log(fileDocId + " " + progress);
-      }, 1000); // Delay for 1 seconds (1000 milliseconds)
+      router.push("/file-preview/" + fileDocId);
+      console.log(fileDocId + " " + progress);
 
       // Cleanup the timeout in case the component unmounts before the timeout
       return () => clearTimeout(timeoutId);

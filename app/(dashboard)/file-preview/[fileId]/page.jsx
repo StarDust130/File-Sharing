@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { doc, getDoc, getDocs, getFirestore, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { app } from "../../../../firebase/firebaseConfig";
 import Image from "next/image";
@@ -84,6 +84,8 @@ const FilePreview = ({ params }) => {
   };
 
   const shareUrl = fileData?.shortUrl;
+
+  
 
   return (
     <>
