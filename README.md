@@ -1,61 +1,58 @@
-# 📂 **Cosmic File Hub** 🚀 (Under Galactic Construction) 🌌
+# 📂 File Sharing App 🚀 (Under Development) 🚧
 
-An interstellar file-sharing sensation powered by Next.js, Tailwind CSS, React, and Firebase! 🚀🌠💾
+An awesome file-sharing app using Next.js, Tailwind CSS, React, and Firebase! 🌐💾
 
-## [Blast Off to the Cosmos!](https://cosmic-file-hub.vercel.app) 🌐
+## [See Live](https://file-sharing-stardust.vercel.app) 🌐
 
-## Features & Marvels ✨
+## Features ✨
 
-- **Celestial Upload**: Dive into the cosmos with drag-and-drop file uploads. 🌌📁✨
+- **Easy Upload**: Drag-and-drop files for quick sharing. 📁✨
   
 
-- **Quantum Integration** with Next.js and Firebase 🔗
+- **Integration** with Next.js and Firebase 🔗
 
-Our file-sharing galaxy is turbocharged with [Next.js](https://nextjs.org/) for warp-speed server-side rendering and [Firebase](https://firebase.google.com/) as the guardian of secure and scalable data storage for your intergalactic files.
+My file-sharing website leverages the power of [Next.js](https://nextjs.org/) for efficient server-side rendering and a smooth user experience. With [Firebase](https://firebase.google.com/), we ensure secure and scalable data storage for your shared files.
 
-### How the Cosmic Magic Works 🚀
+### How it Works 🚀
 
-1. **Nebulaic Server-Side Rendering (SSR) with Next.js**: Experience the breathtaking journey of faster page loads and improved SEO, thanks to Next.js. Your users will feel the cosmic breeze in this responsive file-sharing universe.
+1. **Server-Side Rendering (SSR) with Next.js**: Enjoy faster page loads and improved SEO by utilizing Next.js for server-side rendering. Your users will experience a snappy and responsive file-sharing environment.
 
-2. **Firebase Nebula for Data Storage**: We've selected Firebase as our cosmic backend to provide a robust and secure storage solution for your files. Real-time updates ensure that your shared files are always orbiting the latest stellar coordinates.
+2. **Firebase for Data Storage**: We've chosen Firebase as our backend to provide a robust and secure storage solution for your files. Firebase allows for real-time updates, ensuring that your shared files are always up-to-date.
 
-## Tech Constellation 🛠️
+## Tech Stack 🛠️
 
 - **Next.js** 🚀
 - **Tailwind CSS** 🎨
 - **React** ⚛️
 - **Firebase** 🔥
 
-## How to Navigate the Cosmos 📁
-- 🚀 **Upload Files**:
+## Usage 📁
+- Upload Files:
 
-  - Journey through the cosmos with drag-and-drop or a simple click. 🚀📂
-- 🌌 **Generate Celestial Link**:
+  - Drag-and-drop or click to upload. 🚀📂
+- Generate Link:
 
-  - Manifest a link or send an email invitation to fellow cosmic beings. 📧🔗✉️
-  - 🌐 **Share Across Cosmic Networks**:
+  - Get a link or send an email invite. 📧🔗✉️
+  - Share on Social Media:
 
-    - Broadcast your file link across galaxies using all known social media platforms! 🌐📤
-    - 🔐 **Add Quantum Password Protection**:
+    - Share your file link on all social media platforms! 🌐📤
+    - Add Password Protection:
 
-      - Optionally, fortify your link with a quantum password for extra security. 🔐🔗
-- 📥 **Access Shared Files**:
+      - Optionally, add a password to secure your file link. 🔐🔗
+- Access Shared Files:
 
-  - Recipients can download files using the link from the furthest reaches of the cosmos. 📥💾
-- ✏️ **Edit File Cosmic Info**:
+  - Recipients can download files using the link. 📥💾
+- Edit File Info:
 
-  - Seamlessly update cosmic information about your shared files. ✏️📄
-- 🌓 **Dark Matter Mode and Light Beams Mode**:
+  - Easily update information about your shared files. ✏️📄
+- Dark Mode and Light Mode:
 
-  - Choose between dark matter and light beams modes for a mesmerizing cosmic experience. 🌓🌞
-- 🔐🛡️ **Full Authentication Shields**:
+  - Choose between dark and light modes for a personalized experience. 🌗🌞
+- Full Authentication Protection:
 
-  - Your files are safeguarded by impenetrable authentication shields. 🔒🛡️
+  - Your files are secure with full authentication measures. 🔒🛡️
   
-## Celestial File Info 📄
+## File Info 📄
 
-- Gaze upon the cosmic details of all your files. 📑📂
-- ✨ **Delete or Manage Cosmic Files**:
-
-  - Easily navigate and manage your celestial files. ✨🗑️📁
-
+- View information about all your files. 📑📂
+- Delete or manage your shared files. 🗑️📁
