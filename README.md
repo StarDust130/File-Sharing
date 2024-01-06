@@ -2,19 +2,18 @@
 
 An awesome file-sharing app using Next.js, Tailwind CSS, React, and Firebase! 🌐💾
 
-## [See Live](file-sharing-kappa.vercel.app)
+## [See Live](https://file-sharing-stardust.vercel.app) 🌐
 
 ## Features ✨
 
-
-
 - **Easy Upload**: Drag-and-drop files for quick sharing. 📁✨
+  
 
-- ## Integration with Next.js and Firebase 🔗
+- **Integration** with Next.js and Firebase 🔗
 
-Our file-sharing website leverages the power of [Next.js](https://nextjs.org/) for efficient server-side rendering and a smooth user experience. With [Firebase](https://firebase.google.com/), we ensure secure and scalable data storage for your shared files.
+My file-sharing website leverages the power of [Next.js](https://nextjs.org/) for efficient server-side rendering and a smooth user experience. With [Firebase](https://firebase.google.com/), we ensure secure and scalable data storage for your shared files.
 
-### How it Works
+### How it Works 🚀
 
 1. **Server-Side Rendering (SSR) with Next.js**: Enjoy faster page loads and improved SEO by utilizing Next.js for server-side rendering. Your users will experience a snappy and responsive file-sharing environment.
 
@@ -39,4 +38,3 @@ Our file-sharing website leverages the power of [Next.js](https://nextjs.org/) f
 - Access Shared Files:
 
 - Recipients can download files using the link. 📥💾
-
