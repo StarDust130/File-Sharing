@@ -64,7 +64,7 @@ const Page = () => {
       console.log(fileDocId + " " + progress);
 
       // Cleanup the timeout in case the component unmounts before the timeout
-      return () => clearTimeout(timeoutId);
+      return () => clearTimeout(1000);
     }
   }, [progress, fileDocId, router]);
 
