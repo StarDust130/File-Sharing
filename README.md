@@ -2,6 +2,8 @@
 
 An awesome file-sharing app using Next.js, Tailwind CSS, React, and Firebase! 🌐💾
 
+## [See Live](file-sharing-kappa.vercel.app)
+
 ## Features ✨
 
 
