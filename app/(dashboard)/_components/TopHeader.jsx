@@ -13,6 +13,7 @@ const TopHeader = () => {
           width={150}
           height={100}
           className="md:hidden"
+          
         />
         <UserButton />
       </div>
