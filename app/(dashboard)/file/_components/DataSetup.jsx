@@ -15,6 +15,8 @@ import Loading from "../../../_components/Loading";
 import Image from "next/image";
 import { Copy } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 // import InsertDriveFileIcon from "@mui/material/InsertDriveFile";
 
 export default function DataSetup() {
@@ -83,15 +85,30 @@ export default function DataSetup() {
       setCopiedIndex(null);
     }, 2000);
   };
+ 
 
   return (
     <div className="overflow-x-auto">
       {isLoading ? (
         <Loading />
       ) : filesData.length === 0 ? (
-        <p className="text-center mt-4">
-          No files uploaded yet. Please upload a file.
-        </p>
+        <div className="text-center justify-center items-center flex flex-col mt-4 text-gray-500">
+          <Image
+            src="/dance.gif"
+            alt="Cool Image"
+            width={500}
+            height={500}
+            className="mt-4 max-w-full text-center"
+          />
+          <p className="text-bold text-2xl  ">
+            {" "}
+            No files uploaded yet. Please upload a file.
+          </p>
+          <br />
+          <Link href="/upload" className=" hover:text-blue-500">
+            Go to Upload <ArrowForward />
+          </Link>
+        </div>
       ) : (
         <div className="shadow-md overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <div className="table-responsive">
