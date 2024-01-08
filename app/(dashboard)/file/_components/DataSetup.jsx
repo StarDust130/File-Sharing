@@ -16,7 +16,7 @@ import Image from "next/image";
 import { Copy } from "lucide-react";
 import { useUser } from "@clerk/nextjs";
 import Link from "next/link";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
+import { ArrowForward } from "@mui/icons-material";
 // import InsertDriveFileIcon from "@mui/material/InsertDriveFile";
 
 export default function DataSetup() {
