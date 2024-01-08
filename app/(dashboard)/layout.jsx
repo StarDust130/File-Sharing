@@ -17,4 +17,4 @@ const layout = ({ children }) => {
 };
 export default layout;
 
-//Todo: Add sidebar for small devices
+

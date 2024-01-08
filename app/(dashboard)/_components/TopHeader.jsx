@@ -1,14 +1,18 @@
 "use client";
 import { UserButton } from "@clerk/nextjs";
+
+
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import SideNav from "./SideNav";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
-// ... (previous imports)
+
 
 const TopHeader = () => {
   const [isSideBarVisible, setSideBarVisible] = useState(false);
+  const router = useRouter();
 
   const toggleSideBar = () => {
     setSideBarVisible(!isSideBarVisible);
@@ -21,6 +25,11 @@ const TopHeader = () => {
   const preventPropagation = (e) => {
     e.stopPropagation();
   };
+
+    const handleSignOut = () => {
+      // Redirect to your desired URL on sign out
+      router.push("/");
+    };
 
   return (
     <>
@@ -40,7 +49,14 @@ const TopHeader = () => {
           height={100}
           className="md:hidden cursor-pointer"
         />
-        <UserButton />
+        {/* <UserButton  />
+         */}
+        <UserButton
+          afterSignOutAllSessions={() => {
+            handleSignOut();
+          }}
+        />
+       
       </div>
 
       {isSideBarVisible && (
