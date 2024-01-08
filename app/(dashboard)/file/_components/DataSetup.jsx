@@ -21,7 +21,7 @@ export default function DataSetup() {
   const [filesData, setFilesData] = useState([]);
   const router = useRouter();
   const { user } = useUser();
-   const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchData = async () => {
     try {
@@ -53,6 +53,7 @@ export default function DataSetup() {
         });
 
         setFilesData(data);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -61,7 +62,6 @@ export default function DataSetup() {
 
   useEffect(() => {
     fetchData();
-    setIsLoading(false);
   }, [user]);
 
   const bytesToMB = (bytes) => {
@@ -87,7 +87,7 @@ export default function DataSetup() {
   return (
     <div className="overflow-x-auto">
       {isLoading ? (
-        <p className="text-center mt-4">Loading...</p>
+        <Loading />
       ) : filesData.length === 0 ? (
         <p className="text-center mt-4">
           No files uploaded yet. Please upload a file.
