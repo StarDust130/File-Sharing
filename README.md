@@ -44,8 +44,6 @@ My file-sharing website leverages the power of [Next.js](https://nextjs.org/) fo
   - Recipients can download files using the link. 📥💾
 - Edit File Info:
 
-  - Easily update information about your shared files. ✏️📄
-- Dark Mode and Light Mode:
 
   - Choose between dark and light modes for a personalized experience. 🌗🌞
 - Full Authentication Protection:
