@@ -6,6 +6,7 @@ An awesome (full-stack) file-sharing app using Next.js, Tailwind CSS, React, and
 
 ## Features ✨
 
+
 - **Easy Upload**: Drag-and-drop files for quick sharing. 📁✨
   
 - **Integration** with Next.js and Firebase 🔗
