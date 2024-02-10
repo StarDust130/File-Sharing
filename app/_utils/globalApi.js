@@ -12,3 +12,4 @@ const SendEmail =  (data) => {
 export default {
   SendEmail,
 };
+
