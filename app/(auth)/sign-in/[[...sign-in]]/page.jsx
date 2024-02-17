@@ -13,6 +13,7 @@ export default function Page() {
               layout="fill"
               objectFit="cover"
             />
+            
 
             <div class="hidden lg:relative lg:block lg:p-12">
               <a class="block text-white" href="/">
