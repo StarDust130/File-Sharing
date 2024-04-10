@@ -4,6 +4,7 @@ An awesome (full-stack) file-sharing app using Next.js, Tailwind CSS, React, and
 
 ## [See Live](https://file-sharing-stardust.vercel.app) 🌐
 
+
 ## Features ✨
 
 - **Easy Upload**: Drag-and-drop files for quick sharing. 📁✨
